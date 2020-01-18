@@ -286,7 +286,7 @@ namespace NotReaper.Tools {
 				QNT_Timestamp newTime = SnapToBeat(mousePos.x);
 
 				newTime += offsetFromDragPoint;
-				intent.startTargetData.time = newTime;
+				intent.startTargetData.MoveTimeFromAction(newTime);
 				intent.intendedTick = newTime;
 			}
 		}
