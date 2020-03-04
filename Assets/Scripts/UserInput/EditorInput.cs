@@ -21,6 +21,7 @@ namespace NotReaper.UserInput {
 
 
 	public class EditorInput : MonoBehaviour {
+		public static bool isTesting = false;
 
 		public static EditorInput I;
 		public static EditorTool selectedTool = EditorTool.Standard;
@@ -389,6 +390,9 @@ namespace NotReaper.UserInput {
 		}
 
 		private void Update() {
+			if(isTesting) {
+				return;
+			}
 
 			if ((Timeline.inTimingMode || countInWindow.gameObject.activeSelf) && inUI) {
 				if (Input.GetKeyDown(InputManager.timelineTogglePlay)) {
