@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -2513,7 +2513,7 @@ namespace NotReaper {
 
 			//Shift notes
 			foreach(Target note in orderedNotes) {
-				note.data.time += shift_amount;
+				note.data.SetTimeFromAction(note.data.time + shift_amount);
 			}
 		}
 
