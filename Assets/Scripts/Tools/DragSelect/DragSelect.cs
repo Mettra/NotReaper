@@ -271,7 +271,7 @@ namespace NotReaper.Tools {
 			timelineTargetMoveIntents = new List<TargetTimelineMoveIntent>();
 			timeline.selectedNotes.ForEach(target => {
 				var intent = new TargetTimelineMoveIntent();
-				intent.startTargetData = target.data;
+				intent.targetData = target.data;
 				intent.startTick = target.data.time;
 				timelineTargetMoveIntents.Add(intent);
 			});
@@ -286,7 +286,7 @@ namespace NotReaper.Tools {
 				QNT_Timestamp newTime = SnapToBeat(mousePos.x);
 
 				newTime += offsetFromDragPoint;
-				intent.startTargetData.MoveTimeFromAction(newTime);
+				intent.targetData.SetTimeFromAction(newTime);
 				intent.intendedTick = newTime;
 			}
 		}
